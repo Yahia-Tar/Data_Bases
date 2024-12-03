@@ -60,3 +60,30 @@ CREATE TABLE Rental_Agreement (
     VehicleID		       VARCHAR(10),
     CONSTRAINT pk_rental_agreement  PRIMARY KEY (RentalID)
 );
+
+CREATE TABLE Payment (
+    PaymentID              VARCHAR(10) NOT NULL,
+    Gross_Amount		  FLOAT,
+    Fees				  FLOAT,
+    Tax				  FLOAT,
+    Deposit		       FLOAT,
+    Due_Date 	       	  Date,
+    Payment_Type 	       VARCHAR(50),
+    Card_Number 	       VARCHAR(20),
+    Card_Holder 	       VARCHAR(50),
+    Card_Zipcode 	       VARCHAR(12),
+    CVV 	       		  VARCHAR(4),
+    CustomerID 	       VARCHAR(10),
+    CONSTRAINT pk_payment  PRIMARY KEY (PaymentID)
+);
+
+CREATE TABLE Employee (
+    EmployeeID             VARCHAR(10) NOT NULL,
+    Position		  	  VARCHAR(50),
+    First_Name			  VARCHAR(35),
+    Last_Name			  VARCHAR(25),
+    Phone_Number 	       VARCHAR(15),
+    Email_Address 	       VARCHAR(100),
+    CONSTRAINT pk_employee  PRIMARY KEY (EmployeeID)
+);
+
