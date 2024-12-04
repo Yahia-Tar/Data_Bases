@@ -1,11 +1,11 @@
-CREATE TABLE Zip_Code_Info (
+CREATE TABLE IF NOT EXISTS Zip_Code_Info (
     Zip_Code            	  VARCHAR(12) NOT NULL,
     City 				  VARCHAR(36),
     State	                 VARCHAR(36),
     CONSTRAINT pk_zip_code_info PRIMARY KEY (Zip_Code)
 );
 
-CREATE TABLE Customer (
+CREATE TABLE IF NOT EXISTS Customer (
     CustomerID             VARCHAR(10) NOT NULL,
     Drivers_License_Number VARCHAR(20),
     First_Name             VARCHAR(35),
@@ -18,7 +18,7 @@ CREATE TABLE Customer (
     CONSTRAINT pk_customer PRIMARY KEY (CustomerID)
 );
 
-CREATE TABLE Vehicle (
+CREATE TABLE IF NOT EXISTS Vehicle (
     VehicleID              VARCHAR(10) NOT NULL,
     VIN				  VARCHAR(20),
     Plate_number           VARCHAR(20),
@@ -33,7 +33,7 @@ CREATE TABLE Vehicle (
     CONSTRAINT pk_vehicle  PRIMARY KEY (VehicleID)
 );
 
-CREATE TABLE Vehicle_History (
+CREATE TABLE IF NOT EXISTS Vehicle_History (
     RecordsID              VARCHAR(10) NOT NULL,
     History_Date		  DATE,
     Safety_Status          VARCHAR(50),
@@ -49,7 +49,7 @@ CREATE TABLE Vehicle_History (
     CONSTRAINT pk_vehicle_history  PRIMARY KEY (RecordsID)
 );
 
-CREATE TABLE Rental_Agreement (
+CREATE TABLE IF NOT EXISTS Rental_Agreement (
     RentalID               VARCHAR(10) NOT NULL,
     Start_Date		 	  DATE,
     Return_Date		  DATE,
@@ -61,7 +61,7 @@ CREATE TABLE Rental_Agreement (
     CONSTRAINT pk_rental_agreement  PRIMARY KEY (RentalID)
 );
 
-CREATE TABLE Payment (
+CREATE TABLE IF NOT EXISTS Payment (
     PaymentID              VARCHAR(10) NOT NULL,
     Gross_Amount		  FLOAT,
     Fees				  FLOAT,
@@ -77,7 +77,7 @@ CREATE TABLE Payment (
     CONSTRAINT pk_payment  PRIMARY KEY (PaymentID)
 );
 
-CREATE TABLE Employee (
+CREATE TABLE IF NOT EXISTS Employee (
     EmployeeID             VARCHAR(10) NOT NULL,
     Position		  	  VARCHAR(50),
     First_Name			  VARCHAR(35),
